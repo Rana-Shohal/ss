@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharmin ❤ Shohel | 3 May</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #4b1d6b, #6a2c91);
+      color: #f5d76e;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 30px;
+    }
+    .names {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .heart {
+      font-size: 3rem;
+      margin: 10px 0;
+      color: #ffd700;
+    }
+    .date {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .counter {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+    .message {
+      background: rgba(0,0,0,0.25);
+      padding: 25px;
+      border-radius: 16px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>আমাদের বিয়ের স্মৃতি</h1>
+    <h2>একটি নতুন জীবনের শুরু</h2>
+
+    <div class="names">Shohel Rana</div>
+    <div class="heart">❤</div>
+    <div class="names">Sharmin Akther</div>
+
+    <div class="date">৩ মে ২০২৫</div>
+    <div class="counter" id="counter">লোড হচ্ছে...</div>
+
+    <div class="message">
+      <p>
+        ৩ মে আমাদের জীবনের এমন একটি দিন,
+        যেদিন দুটি হৃদয় একটি বন্ধনে আবদ্ধ হয়েছে।
+        ভালোবাসা, বিশ্বাস আর সম্মানের উপর ভর করে
+        আমরা একসাথে পথচলার অঙ্গীকার করেছি।
+      </p>
+      <p>
+        এই ছোট্ট ওয়েবসাইটটি আমাদের সেই বিশেষ দিনের
+        একটি ডিজিটাল স্মৃতি হিসেবে রয়ে যাবে —
+        যেখানে ভালোবাসা কখনো পুরোনো হবে না।
+      </p>
+    </div>
+
+    <footer>
+      © Sharmin & Shohel | Made with ❤
+    </footer>
+  </div>
+
+  <script>
+    const weddingDate = new Date('2025-05-03T00:00:00');
+
+    function updateCounter() {
+      const now = new Date();
+      let diff = now - weddingDate;
+
+      if (diff < 0) {
+        document.getElementById('counter').innerText = 'আজই আমাদের বিশেষ দিন ❤';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      diff %= (1000 * 60 * 60 * 24);
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      diff %= (1000 * 60 * 60);
+      const minutes = Math.floor(diff / (1000 * 60));
+      diff %= (1000 * 60);
+      const seconds = Math.floor(diff / 1000);
+
+      document.getElementById('counter').innerText =
+        `একসাথে ${days} দিন ${hours} ঘণ্টা ${minutes} মিনিট ${seconds} সেকেন্ড`;
+    }
+
+    setInterval(updateCounter, 1000);
+    updateCounter();
+  </script>
+</body>
+</html>
